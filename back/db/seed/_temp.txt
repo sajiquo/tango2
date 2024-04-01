@@ -1,0 +1,15 @@
+
+   {
+      "name": "",
+      "meaning": "",
+      "sentences": [
+        {
+          "text": "",
+          "inflection": "",
+        },
+        {
+          "text": "",
+          "inflection": "",
+        }
+      ]
+    }

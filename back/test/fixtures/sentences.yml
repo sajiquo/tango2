@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  text: MyString
+  inflection: MyString
+  word: one
+
+two:
+  text: MyString
+  inflection: MyString
+  word: two

@@ -1,0 +1,46 @@
+# This file is auto-generated from the current state of the database. Instead
+# of editing this file, please use the migrations feature of Active Record to
+# incrementally modify your database, and then regenerate this schema definition.
+#
+# This file is the source Rails uses to define your schema when running `bin/rails
+# db:schema:load`. When creating a new database, `bin/rails db:schema:load` tends to
+# be faster and is potentially less error prone than running all of your
+# migrations from scratch. Old migrations may fail to apply correctly if those
+# migrations use external dependencies or application code.
+#
+# It's strongly recommended that you check this file into your version control system.
+
+ActiveRecord::Schema[7.1].define(version: 2024_03_20_140144) do
+  create_table "languages", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "lessons", force: :cascade do |t|
+    t.string "name"
+    t.integer "language_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["language_id"], name: "index_lessons_on_language_id"
+  end
+
+  create_table "sentences", force: :cascade do |t|
+    t.string "text"
+    t.string "inflection"
+    t.integer "word_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["word_id"], name: "index_sentences_on_word_id"
+  end
+
+  create_table "words", force: :cascade do |t|
+    t.string "name"
+    t.string "meaning"
+    t.integer "lesson_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["lesson_id"], name: "index_words_on_lesson_id"
+  end
+
+end
