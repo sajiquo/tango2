@@ -5,11 +5,11 @@
       "sentences": [
         {
           "text": "",
-          "inflection": "",
+          "inflection": ""
         },
         {
           "text": "",
-          "inflection": "",
+          "inflection": ""
         }
       ]
     }

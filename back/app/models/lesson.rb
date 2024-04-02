@@ -2,7 +2,7 @@ class Lesson < ApplicationRecord
   has_many :words
   has_many :sentences, through: :words
 
-  def quiz(limit)
+  def generate_quiz_list(limit)
     limit ||= 10
     sentences = words.flat_map(&:sentences)
     all_options = sentences.map(&:inflection)

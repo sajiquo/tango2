@@ -1,5 +1,5 @@
 class LessonsController < ApplicationController
-  before_action :set_lesson, only: %i[ show update destroy quiz ]
+  before_action :set_lesson, only: %i[ show update destroy ]
 
   # GET /lessons
   def index
@@ -11,11 +11,6 @@ class LessonsController < ApplicationController
   # GET /lessons/1
   def show
     render json: @lesson.as_json(include: { words: { include: :sentences }})
-  end
-
-  # GET /lessons/1/quiz
-  def quiz
-    render json: @lesson.quiz(params[:limit])
   end
 
   # POST /lessons
@@ -44,12 +39,10 @@ class LessonsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_lesson
       @lesson = Lesson.find(params[:id])
     end
 
-    # Only allow a list of trusted parameters through.
     def lesson_params
       params.require(:lesson).permit(:name, :word_id)
     end
